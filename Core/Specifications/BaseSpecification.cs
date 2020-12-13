@@ -42,7 +42,7 @@ namespace Core.Specifications
 
         protected void AddOrderByDescending(Expression<Func<T, object>> OrderByDescExpression)
         {
-            OrderBy = OrderByDescExpression;
+            OrderByDescending = OrderByDescExpression;
         }
 
         protected void ApplyPaging(int skip, int take)
