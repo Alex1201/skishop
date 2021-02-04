@@ -6,6 +6,11 @@ namespace API.Dtos
 {
     public class OrderToReturnDto
     {
+        public OrderToReturnDto()
+        {
+            Total = Subtotal;
+        }
+
         public int Id { get; set; }
         public string BuyerEmail { get; set; }
         public DateTimeOffset OrderDate { get; set; }

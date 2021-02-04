@@ -1,6 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using API.Dtos;
 using API.Errors;
@@ -38,13 +36,22 @@ namespace API.Controllers
             return Ok(order);
         }
 
+        // [HttpGet]
+        // public async Task<ActionResult<IReadOnlyList<OrderDto>>> GetOrdersForUser()
+        // {
+        //     var email = HttpContext.User.RetreiveEmailFromPrincipal();
+
+        //     var orders = await _orderService.GetOrderForUserAsync(email);
+
+        //     return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
+        // }
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<OrderDto>>> GetOrdersForUser()
         {
             var email = HttpContext.User.RetreiveEmailFromPrincipal();
-
+            
             var orders = await _orderService.GetOrderForUserAsync(email);
-
+            
             return Ok(_mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders));
         }
 

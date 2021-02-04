@@ -13,7 +13,7 @@ export class TestErrorComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
   get404Error() {
     this.http.get(this.baseUrl + 'products/42').subscribe(

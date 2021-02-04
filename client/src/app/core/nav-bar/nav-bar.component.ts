@@ -16,7 +16,7 @@ export class NavBarComponent implements OnInit {
 
   constructor(private basketService: BasketService, private accountService: AccountService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.basket$ = this.basketService.basket$;
     this.currentUser$ = this.accountService.currentUser$;
   }
